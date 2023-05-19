@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Browse",
+    "Icon": "bx bxs-compass",
+    "route": "/"
+  },
+  {
+    "title": "Populer",
+    "Icon": "bx bxs-user-voice",
+    "route": "/populer"
+  },
+  {
+    "title": "Comming Soon",
+    "Icon": "bx bxs-calendar",
+    "route": "/commingsoon"
+  }
+]

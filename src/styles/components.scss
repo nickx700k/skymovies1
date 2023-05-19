@@ -1,0 +1,140 @@
+.sidebar {
+  width: 230px;
+  position: relative;
+  &--container {
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    flex-direction: column;
+    padding: 2rem;
+    gap: 2.5rem;
+    &--logo {
+      &--title {
+        font-size: 0.8rem;
+        color: var(--white-color);
+        & span {
+          color: var(--blue-color);
+        }
+      }
+    }
+    &--feeds {
+      position: relative;
+      & span {
+        color: var(--gray-color);
+        font-size: 0.7rem;
+        font-weight: 600;
+      }
+      &--ul {
+        list-style: none;
+        display: flex;
+        padding: 1rem 0rem;
+        flex-direction: column;
+        gap: 0.5rem;
+        &--li a {
+          display: flex;
+          flex-direction: row-reverse;
+          align-items: center;
+          justify-content: left;
+          gap: 1rem;
+          text-decoration: none;
+          color: var(--gray-color);
+          position: relative;
+          & h2 {
+            font-size: 0.7rem;
+            font-weight: 500;
+          }
+          & i {
+            font-size: 0.7rem;
+          }
+        }
+        &--li a::before {
+          position: absolute;
+          content: "";
+          background-color: var(--blue-color);
+          height: 75%;
+          width: 2px;
+          left: -10px;
+        }
+      }
+    }
+    &--feeds::after {
+      position: absolute;
+      content: "";
+      background-color: var(--black2-color);
+      height: 2px;
+      width: 80%;
+      bottom: 0;
+    }
+    &--users {
+      display: flex;
+      align-items: left;
+      justify-content: center;
+      flex-direction: column;
+      gap: 0.7rem;
+      position: relative;
+      padding-bottom: 2rem;
+      &--span {
+        font-size: 0.7rem;
+        font-weight: 700;
+        color: var(--gray-color);
+        padding: 0.8rem 0;
+      }
+      &--user {
+        width: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &--info {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 7px;
+          font-size: 0.8rem;
+          font-weight: 700;
+          color: var(--gray-color);
+          cursor: pointer;
+          &--profile {
+            width: 15px;
+            border-radius: 50%;
+          }
+        }
+        &--icon {
+          font-size: 0.5rem;
+        }
+      }
+    }
+    &--users::after {
+      position: absolute;
+      content: "";
+      background-color: var(--black2-color);
+      height: 2px;
+      width: 80%;
+      bottom: 0;
+    }
+    &--logout {
+      display: flex;
+      align-items: center;
+      justify-content: left;
+      gap: 5px;
+      cursor: pointer;
+      &--icon {
+        font-size: 1rem;
+        color: var(--gray-color);
+      }
+      &--span {
+        font-size: 1rem;
+        color: var(--gray-color);
+      }
+    }
+  }
+}
+
+.sidebar::before {
+  position: absolute;
+  content: "";
+  background-color: var(--black2-color);
+  height: 100%;
+  width: 2px;
+  right: 20px;
+}
