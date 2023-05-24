@@ -1,0 +1,22 @@
+[
+  {
+    "id": "1",
+    "username": "ehsan.S",
+    "profile": "assets/images/ehsan.jpg",
+    "pharag": "I love the comedy movies. thiere watch is so good for me. i guss its good for evereone."
+  },
+
+  {
+    "id": "2",
+    "username": "masoud.k",
+    "profile": "assets/images/masoud.jpg",
+    "pharag": "I love the romantic movies. thiere watch is so good for me. i guss its good for evereone."
+  },
+
+  {
+    "id": "3",
+    "username": "hadi.a",
+    "profile": "assets/images/hadi.jpg",
+    "pharag": "I love the action movies. thiere watch is so good for me. i guss its good for evereone."
+  }
+]
