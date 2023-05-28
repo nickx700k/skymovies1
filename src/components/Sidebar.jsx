@@ -14,10 +14,10 @@ export default function Sidebar() {
           </h3>
         </div>
         <div className="sidebar--container--feeds">
-          <span>News Feed</span>
+          <span>Options</span>
           <ul className="sidebar--container--feeds--ul">
             {newsfeeds.map((item, index) => (
-              <li className="sidebar--container--feeds--ul--li">
+              <li key={index} className="sidebar--container--feeds--ul--li">
                 <NavLink to={item.route}>
                   <h2 className="sidebar--container--feeds--ul--li--title">
                     {item.title}
@@ -32,8 +32,8 @@ export default function Sidebar() {
         </div>
         <div className="sidebar--container--users">
           <span className="sidebar--container--users--span">Users</span>
-          {users.map((item) => (
-            <div className="sidebar--container--users--user">
+          {users.map((item, index) => (
+            <div key={index} className="sidebar--container--users--user">
               <div className="sidebar--container--users--user--info">
                 <img
                   src={item.profile}

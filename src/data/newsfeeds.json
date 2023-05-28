@@ -1,17 +1,17 @@
 [
   {
-    "title": "Browse",
-    "Icon": "bx bxs-compass",
+    "title": "Movies",
+    "Icon": "bx bxs-movie-play",
     "route": "/"
   },
   {
-    "title": "Populer",
-    "Icon": "bx bxs-user-voice",
-    "route": "/populer"
+    "title": "TV Series",
+    "Icon": "bx bxs-tv",
+    "route": "/tvseris"
   },
   {
-    "title": "Comming Soon",
-    "Icon": "bx bxs-calendar",
-    "route": "/commingsoon"
+    "title": "WishList",
+    "Icon": "bx bxs-heart",
+    "route": "/wishlist"
   }
 ]

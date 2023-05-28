@@ -1,6 +1,7 @@
 import "./styles/App.css";
 import "./styles/components.scss";
 import "./styles/layout.scss";
+import "./styles/pages.scss";
 import Layout from "./layouts/Layout";
 import Provider from "./utilities/Provider";
 

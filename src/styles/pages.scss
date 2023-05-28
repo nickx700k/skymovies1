@@ -1,0 +1,24 @@
+$react-slidy-c-background: transparent !default;
+$react-slidy-c-nav-background: rgba(255, 255, 255, 0.8) !default;
+$react-slidy-c-nav-color: #aaaaaa !default;
+$react-slidy-c-transparent: rgba(0, 0, 0, 0) !default;
+$react-slidy-mh: 50px !default;
+$react-slidy-h-image: auto !default;
+
+.home {
+  width: 100%;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &--header {
+    display: block;
+    z-index: 10;
+  }
+  &--body {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+  }
+}

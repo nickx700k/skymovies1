@@ -51,7 +51,7 @@ export default function Topbar() {
     },
   ];
 
-  const [active, setActive] = useState(true);
+  const [active, setActive] = useState(false);
 
   const handleActive = () => {
     setActive((preve) => !preve);
@@ -66,10 +66,10 @@ export default function Topbar() {
             className="topbar--container--search--input"
             placeholder="Search everthing"
           />
-          <i class="bx bx-search topbar--container--search--icon"></i>
+          <i className="bx bx-search topbar--container--search--icon"></i>
         </div>
         <div className="topbar--container--dropdown">
-          <i class="bx bx-palette topbar--container--dropdown--icon topbar--container--dropdown--palette">
+          <i className="bx bx-palette topbar--container--dropdown--icon topbar--container--dropdown--palette">
             <div className={`topbar--container--dropdown--theme ${theme}`}>
               <div className="topbar--container--dropdown--theme--modes">
                 <span
@@ -93,7 +93,7 @@ export default function Topbar() {
                         handleThemeMode(theme === "light" ? "dark" : "light")
                       }
                     />
-                    <label for="switch-round"></label>
+                    <label htmlFor="switch-round"></label>
                   </span>
                 </div>
               </div>
@@ -122,7 +122,7 @@ export default function Topbar() {
               </div>
             </div>
           </i>
-          <i class="bx bx-message-alt-detail topbar--container--dropdown--icon topbar--container--dropdown--detail">
+          <i className="bx bx-message-alt-detail topbar--container--dropdown--icon topbar--container--dropdown--detail">
             <div
               className={`topbar--container--dropdown--notification ${theme}`}
             >
@@ -148,7 +148,7 @@ export default function Topbar() {
               ))}
             </div>
           </i>
-          <i class="bx bx-bell topbar--container--dropdown--icon topbar--container--dropdown--bell">
+          <i className="bx bx-bell topbar--container--dropdown--icon topbar--container--dropdown--bell">
             <div className={`topbar--container--dropdown--bellnote ${theme}`}>
               {notification.map((item) => (
                 <div
