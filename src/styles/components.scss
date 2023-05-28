@@ -149,6 +149,7 @@
     &--search {
       position: relative;
       display: flex;
+
       &--input {
         width: 250px;
         height: 35px;
@@ -295,7 +296,7 @@
       }
       &--palette:hover &--theme {
         opacity: 1;
-        z-index: 1;
+        z-index: 99;
       }
       &--userPhoto {
         width: 35px;
@@ -351,7 +352,7 @@
 
       &--detail:hover &--notification {
         opacity: 1;
-        z-index: 1;
+        z-index: 99;
       }
       &--bellnote {
         display: flex;
@@ -400,7 +401,7 @@
       }
       &--bell:hover &--bellnote {
         opacity: 1;
-        z-index: 1;
+        z-index: 99;
       }
     }
     &--userprofile {
@@ -487,6 +488,7 @@
 
 .active {
   display: flex;
+  z-index: 99;
 }
 
 @keyframes move {

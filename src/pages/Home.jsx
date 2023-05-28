@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <div className="home">
       <div className="home--header">
-        {populer && <SimpleSlider items={populer.slice(0, 4)} />}
+        {populer && <SimpleSlider items={populer.slice(0, 15)} />}
       </div>
       <div className="home--body">
         {populer && <MovieList title={"Populer"} items={populer} />}
