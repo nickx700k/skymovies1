@@ -1,6 +1,8 @@
 import React, { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { orginalImageApi } from "../api/api";
+import { largeImageApi } from "../api/api";
+import { UtilityContext } from "../utilities/Provider";
 
 // Import Swiper styles
 import "swiper/css";
@@ -9,6 +11,7 @@ import "swiper/css/navigation";
 
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper";
+import { useContext } from "react";
 
 export default function MovieList({ items, title }) {
   const progressCircle = useRef(null);
@@ -18,10 +21,12 @@ export default function MovieList({ items, title }) {
     progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
   };
 
+  const { color } = useContext(UtilityContext);
+
   return (
     <div className="movielist">
       <div className="slimbleslider">
-        <h3 className="page_title">{title}</h3>
+        <h3 className={`page_title ${color}`}>{title}</h3>
         <Swiper
           slidesPerView={5}
           spaceBetween={10}
@@ -46,7 +51,7 @@ export default function MovieList({ items, title }) {
                     src={
                       item?.poster_path
                         ? `${orginalImageApi}${item?.poster_path}`
-                        : `${orginalImageApi}${item?.backdrop_path}`
+                        : `${largeImageApi}${item?.backdrop_path}`
                     }
                     className="movielist--movie--poster"
                   />
@@ -54,7 +59,6 @@ export default function MovieList({ items, title }) {
                     <span className="movielist--movie--info--rating">
                       {item?.vote_average}
                     </span>
-                    <i class="bx bxs-chevron-right-circle movielist--movie--info--icon"></i>
                   </div>
                 </div>
               </SwiperSlide>

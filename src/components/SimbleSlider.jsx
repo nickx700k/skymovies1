@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { orginalImageApi } from "../api/api";
+import { UtilityContext } from "../utilities/Provider";
 
 // Import Swiper styles
 import "swiper/css";
@@ -9,6 +10,7 @@ import "swiper/css/navigation";
 
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper";
+import { useContext } from "react";
 
 export default function SimbleSlider({ items }) {
   const progressCircle = useRef(null);
@@ -17,6 +19,8 @@ export default function SimbleSlider({ items }) {
     progressCircle.current.style.setProperty("--progress", 1 - progress);
     progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
   };
+
+  const { color } = useContext(UtilityContext);
 
   return (
     <div className="slimbleslider">
@@ -63,14 +67,16 @@ export default function SimbleSlider({ items }) {
                     </span>
                   </div>
                   <div className="swiper-slide--info--part2--lan">
-                    <i class="bx bx-globe swiper-slide--info--part2--lan--image"></i>
+                    <i className="bx bx-globe swiper-slide--info--part2--lan--image"></i>
                     <span className="swiper-slide--info--part2--lan--span">
                       {item?.original_language}
                     </span>
                   </div>
                 </div>
                 <div className="swiper-slide--info--part3">
-                  <button className="swiper-slide--info--part3--button">
+                  <button
+                    className={`swiper-slide--info--part3--button ${color}back`}
+                  >
                     Watch
                   </button>
 

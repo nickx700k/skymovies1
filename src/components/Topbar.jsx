@@ -1,10 +1,21 @@
 import React, { useContext, useState } from "react";
 import { UtilityContext } from "../utilities/Provider";
 import notification from "../data/notification.json";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Topbar() {
-  const { theme, handleThemeColor, handleThemeMode } =
-    useContext(UtilityContext);
+  const {
+    theme,
+    handleThemeColor,
+    handleThemeMode,
+    handleSearch,
+    search,
+    changeMode,
+    color,
+  } = useContext(UtilityContext);
+
+  const navigate = useNavigate();
 
   const colors = [
     {
@@ -57,6 +68,14 @@ export default function Topbar() {
     setActive((preve) => !preve);
   };
 
+  useEffect(() => {
+    if (search) {
+      navigate(`/search?=${search}`);
+    } else {
+      navigate("/");
+    }
+  }, [search]);
+
   return (
     <div className="topbar">
       <div className="topbar--container">
@@ -65,12 +84,38 @@ export default function Topbar() {
             type="text"
             className="topbar--container--search--input"
             placeholder="Search everthing"
+            onChange={handleSearch}
+            value={search}
+            style={{
+              backgroundColor: changeMode?.background2,
+              transition: changeMode?.transition,
+              border: "none",
+              outline: "none",
+            }}
           />
-          <i className="bx bx-search topbar--container--search--icon"></i>
+          <i
+            className="bx bx-search topbar--container--search--icon"
+            style={{
+              color: changeMode?.color2,
+              transition: changeMode?.transition,
+            }}
+          ></i>
         </div>
         <div className="topbar--container--dropdown">
-          <i className="bx bx-palette topbar--container--dropdown--icon topbar--container--dropdown--palette">
-            <div className={`topbar--container--dropdown--theme ${theme}`}>
+          <i
+            className="bx bx-palette topbar--container--dropdown--icon topbar--container--dropdown--palette"
+            style={{
+              color: changeMode?.color2,
+              transition: changeMode?.transition,
+            }}
+          >
+            <div
+              className="topbar--container--dropdown--theme"
+              style={{
+                backgroundColor: changeMode?.background2,
+                transition: changeMode?.transition,
+              }}
+            >
               <div className="topbar--container--dropdown--theme--modes">
                 <span
                   className="topbar--container--dropdown--theme--modes--span"
@@ -122,9 +167,19 @@ export default function Topbar() {
               </div>
             </div>
           </i>
-          <i className="bx bx-message-alt-detail topbar--container--dropdown--icon topbar--container--dropdown--detail">
+          <i
+            className="bx bx-message-alt-detail topbar--container--dropdown--icon topbar--container--dropdown--detail"
+            style={{
+              color: changeMode?.color2,
+              transition: changeMode?.transition,
+            }}
+          >
             <div
-              className={`topbar--container--dropdown--notification ${theme}`}
+              className="topbar--container--dropdown--notification"
+              style={{
+                backgroundColor: changeMode?.background2,
+                transition: changeMode?.transition,
+              }}
             >
               {notification.map((item) => (
                 <div
@@ -148,8 +203,20 @@ export default function Topbar() {
               ))}
             </div>
           </i>
-          <i className="bx bx-bell topbar--container--dropdown--icon topbar--container--dropdown--bell">
-            <div className={`topbar--container--dropdown--bellnote ${theme}`}>
+          <i
+            className="bx bx-bell topbar--container--dropdown--icon topbar--container--dropdown--bell"
+            style={{
+              color: changeMode?.color2,
+              transition: changeMode?.transition,
+            }}
+          >
+            <div
+              className="topbar--container--dropdown--bellnote"
+              style={{
+                backgroundColor: changeMode?.background2,
+                transition: changeMode?.transition,
+              }}
+            >
               {notification.map((item) => (
                 <div
                   key={item.id}
@@ -174,6 +241,10 @@ export default function Topbar() {
           </i>
           <img
             className="topbar--container--dropdown--userPhoto"
+            style={{
+              border: `2px solid var(--${color}-color)`,
+              transition: "all .3s",
+            }}
             src="assets/images/nasir.jpg"
             alt="user photo"
             onClick={handleActive}
@@ -181,6 +252,10 @@ export default function Topbar() {
         </div>
         <div
           className={`topbar--container--userprofile ${active ? "active" : ""}`}
+          style={{
+            backgroundColor: changeMode?.background2,
+            transition: changeMode?.transition,
+          }}
         >
           <div className="topbar--container--userprofile--up">
             <h5 className="topbar--container--userprofile--up--h5">
@@ -190,27 +265,57 @@ export default function Topbar() {
           <div className="topbar--container--userprofile--middle">
             <ul className="topbar--container--userprofile--middle--options">
               <li className="topbar--container--userprofile--middle--options--item">
-                <span className="topbar--container--userprofile--middle--options--item--span">
+                <span
+                  className="topbar--container--userprofile--middle--options--item--span"
+                  style={{
+                    color: changeMode?.color2,
+                    transition: changeMode?.transition,
+                  }}
+                >
                   Edit Profile
                 </span>
               </li>
               <li className="topbar--container--userprofile--middle--options--item">
-                <span className="topbar--container--userprofile--middle--options--item--span">
+                <span
+                  className="topbar--container--userprofile--middle--options--item--span"
+                  style={{
+                    color: changeMode?.color2,
+                    transition: changeMode?.transition,
+                  }}
+                >
                   Edit Settings
                 </span>
               </li>
               <li className="topbar--container--userprofile--middle--options--item">
-                <span className="topbar--container--userprofile--middle--options--item--span">
+                <span
+                  className="topbar--container--userprofile--middle--options--item--span"
+                  style={{
+                    color: changeMode?.color2,
+                    transition: changeMode?.transition,
+                  }}
+                >
                   Dashboard
                 </span>
               </li>
               <li className="topbar--container--userprofile--middle--options--item">
-                <span className="topbar--container--userprofile--middle--options--item--span">
+                <span
+                  className="topbar--container--userprofile--middle--options--item--span"
+                  style={{
+                    color: changeMode?.color2,
+                    transition: changeMode?.transition,
+                  }}
+                >
                   Wish List
                 </span>
               </li>
               <li className="topbar--container--userprofile--middle--options--item">
-                <span className="topbar--container--userprofile--middle--options--item--span">
+                <span
+                  className="topbar--container--userprofile--middle--options--item--span"
+                  style={{
+                    color: changeMode?.color2,
+                    transition: changeMode?.transition,
+                  }}
+                >
                   Upgrade Profile
                 </span>
               </li>

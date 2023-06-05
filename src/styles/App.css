@@ -15,6 +15,8 @@ body {
   --white2-color: #d3d3d3;
   --gray-color: #a0a0a0;
   --gray2-color: #747474;
+  --gray3-color: #353535;
+  --gray4-color: #1f1f1f;
   --black-color: #242424;
   --black2-color: #272727;
   --black3-color: #3f3f3f;
@@ -37,4 +39,119 @@ body {
   --light2-bg: #d3d3d3;
   --dark-bg: #181818;
   --dark2-bg: #252525;
+}
+
+.light::before,
+.light::after {
+  background-color: var(--white2-color) !important;
+}
+
+.dark::before,
+.dark::after {
+  background-color: var(--black2-color) !important;
+}
+
+.bluebg::before,
+.bluebg::after {
+  background-color: var(--blue-color) !important;
+}
+
+.redbg::before,
+.redbg::after {
+  background-color: var(--red-color) !important;
+}
+
+.greenbg::before,
+.greenbg::after {
+  background-color: var(--green-color) !important;
+}
+
+.yellowbg::before,
+.yellowbg::after {
+  background-color: var(--yellow-color) !important;
+}
+
+.pinkbg::before,
+.pinkbg::after {
+  background-color: var(--pink-color) !important;
+}
+
+.orangebg::before,
+.orangebg::after {
+  background-color: var(--orange-color) !important;
+}
+
+.purplebg::before,
+.purplebg::after {
+  background-color: var(--purple-color) !important;
+}
+
+.blue {
+  color: var(--dark-blue-color) !important;
+  transition: all 0.3s !important;
+}
+
+.red {
+  color: var(--dark-red-color) !important;
+  transition: all 0.3s !important;
+}
+
+.green {
+  color: var(--dark-green-color) !important;
+  transition: all 0.3s !important;
+}
+
+.pink {
+  color: var(--dark-pink-color) !important;
+  transition: all 0.3s !important;
+}
+
+.orange {
+  color: var(--dark-orange-color) !important;
+  transition: all 0.3s !important;
+}
+
+.yellow {
+  color: var(--dark-yellow-color) !important;
+  transition: all 0.3s !important;
+}
+
+.purple {
+  color: var(--dark-purple-color) !important;
+  transition: all 0.3s !important;
+}
+
+.blueback {
+  background-color: var(--dark-blue-color) !important;
+  transition: all 0.3s !important;
+}
+
+.redback {
+  background-color: var(--dark-red-color) !important;
+  transition: all 0.3s !important;
+}
+
+.orangeback {
+  background-color: var(--dark-orange-color) !important;
+  transition: all 0.3s !important;
+}
+
+.yellowback {
+  background-color: var(--dark-yellow-color) !important;
+  transition: all 0.3s !important;
+}
+
+.pinkback {
+  background-color: var(--dark-pink-color) !important;
+  transition: all 0.3s !important;
+}
+
+.purpleback {
+  background-color: var(--dark-purple-color) !important;
+  transition: all 0.3s !important;
+}
+
+.greenback {
+  background-color: var(--dark-green-color) !important;
+  transition: all 0.3s !important;
 }
