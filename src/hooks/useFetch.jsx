@@ -6,6 +6,11 @@ export const useFetch = (api) => {
   const [now, setNow] = useState(null);
   const [top, setTop] = useState(null);
   const [up, setUp] = useState(null);
+  const [airT, setAirT] = useState(null);
+  const [onTheAire, setOnTheAir] = useState(null);
+  const [popTv, setPopTv] = useState(null);
+  const [tvRate, setTvRate] = useState(null);
+  const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -24,6 +29,10 @@ export const useFetch = (api) => {
         setNow(result.results);
         setTop(result.results);
         setUp(result.results);
+        setAirT(result.results);
+        setOnTheAir(result.results);
+        setPopTv(result.results);
+        setTvRate(result.results);
         setError(null);
       } catch (err) {
         if (err) {
@@ -37,5 +46,16 @@ export const useFetch = (api) => {
     fetchData();
   }, [api]);
 
-  return { populer, top, up, now, loading, error };
+  return {
+    populer,
+    top,
+    up,
+    now,
+    loading,
+    error,
+    airT,
+    onTheAire,
+    popTv,
+    tvRate,
+  };
 };

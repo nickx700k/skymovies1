@@ -7,11 +7,38 @@ $react-slidy-h-image: auto !default;
 
 .home {
   width: 100%;
-
+  height: 100vh;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: scroll;
+  padding-bottom: 10rem;
+  &--header {
+    display: block;
+    z-index: 10;
+  }
+  &--body {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+  }
+}
+
+.home::-webkit-scrollbar,
+.series::-webkit-scrollbar {
+  display: none;
+}
+
+.series {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: scroll;
+  padding-bottom: 10rem;
   &--header {
     display: block;
     z-index: 10;

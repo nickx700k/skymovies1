@@ -1,28 +1,30 @@
 import React, { useState, useEffect } from "react";
-import { populerApi } from "../api/api";
-import { topRatedApi } from "../api/api";
-import { nowPlayingApi } from "../api/api";
-import { upcommingApi } from "../api/api";
+import { airingTodayApi } from "../api/api";
+import { onTheAirApi } from "../api/api";
+import { populerTvApi } from "../api/api";
+import { topTvRatedApi } from "../api/api";
 import { useFetch } from "../hooks/useFetch";
-import SimpleSlider from "../components/SimbleSlider";
-import MovieList from "../components/MovieList";
+import SimbleSlider2 from "../components/SimbleSlider2";
+import SeriesList from "../components/SeriesList";
 
 export default function Series() {
-  const { populer } = useFetch(populerApi);
-  const { top } = useFetch(topRatedApi);
-  const { now } = useFetch(nowPlayingApi);
-  const { up } = useFetch(upcommingApi);
+  const { airT } = useFetch(airingTodayApi);
+  const { popTv } = useFetch(populerTvApi);
+  const { onTheAire } = useFetch(onTheAirApi);
+  const { tvRate } = useFetch(topTvRatedApi);
 
   return (
-    <div className="home">
-      <div className="home--header">
-        {populer && <SimpleSlider items={populer.slice(0, 15)} />}
+    <div className="series">
+      <div className="series--header">
+        {airT && <SimbleSlider2 items={airT.slice(0, 15)} />}
       </div>
-      <div className="home--body">
-        {populer && <MovieList title={"Populer"} items={populer} />}
-        {top && <MovieList title={"Top Rated"} items={top} />}
-        {now && <MovieList title={"Now Playing"} items={now} />}
-        {up && <MovieList title={"Up Comming"} items={up} />}
+      <div className="series--body">
+        {popTv && <SeriesList items={popTv} title={"Populer Series"} />}
+        {onTheAire && (
+          <SeriesList items={onTheAire} title={"ON The Air Series"} />
+        )}
+        {airT && <SeriesList items={airT} title={"Airing Series Today"} />}
+        {tvRate && <SeriesList items={tvRate} title={"Top Rated Series"} />}
       </div>
     </div>
   );

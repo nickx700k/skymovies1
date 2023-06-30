@@ -1,6 +1,7 @@
 .sidebar {
   width: 230px;
   position: relative;
+  height: 100vh;
   &--container {
     display: flex;
     align-items: left;
@@ -85,7 +86,10 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-
+        padding: 0.2rem;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s !important;
         &--info {
           display: flex;
           align-items: center;
@@ -93,7 +97,7 @@
           gap: 7px;
           font-size: 0.8rem;
           font-weight: 700;
-          color: var(--gray-color);
+
           cursor: pointer;
           &--profile {
             width: 15px;
@@ -105,6 +109,7 @@
         }
       }
     }
+
     &--users::after {
       position: absolute;
       content: "";
@@ -613,12 +618,54 @@
 
 .movielist .swiper-slide {
   width: 200px !important;
-  height: 230px;
+  height: 230px !important;
 }
 
 .movielist {
   padding-top: 2rem;
   &--movie {
+    position: relative;
+    &--poster {
+      width: 100% !important;
+      height: 100% !important;
+      border-radius: 20px;
+    }
+    &--info {
+      width: 100%;
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      bottom: 0;
+      padding: 1rem;
+      &--rating {
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        background-color: var(--yellow-color);
+        color: var(--black3-color);
+        border-radius: 50%;
+        font-size: 1rem;
+        font-weight: 900;
+        padding-top: 0.6rem;
+      }
+      &--icon {
+        font-size: 3rem;
+        color: var(--blue-color);
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.serieslist .swiper-slide {
+  width: 200px !important;
+  height: 230px !important;
+}
+
+.serieslist {
+  padding-top: 2rem;
+  &--series {
     position: relative;
     &--poster {
       width: 100% !important;

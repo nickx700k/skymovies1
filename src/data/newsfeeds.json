@@ -7,7 +7,7 @@
   {
     "title": "TV Series",
     "Icon": "bx bxs-tv",
-    "route": "/tvseris"
+    "route": "/tvseries"
   },
   {
     "title": "WishList",

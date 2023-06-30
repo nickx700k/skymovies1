@@ -121,6 +121,41 @@ body {
   transition: all 0.3s !important;
 }
 
+.bluehover:hover {
+  color: var(--dark-blue-color) !important;
+  transition: all 0.3s !important;
+}
+
+.redhover:hover {
+  color: var(--dark-red-color) !important;
+  transition: all 0.3s !important;
+}
+
+.greenhover:hover {
+  color: var(--dark-green-color) !important;
+  transition: all 0.3s !important;
+}
+
+.pinkhover:hover {
+  color: var(--dark-pink-color) !important;
+  transition: all 0.3s !important;
+}
+
+.orangehover:hover {
+  color: var(--dark-orange-color) !important;
+  transition: all 0.3s !important;
+}
+
+.yellowhover:hover {
+  color: var(--dark-yellow-color) !important;
+  transition: all 0.3s !important;
+}
+
+.purplehover:hover {
+  color: var(--dark-purple-color) !important;
+  transition: all 0.3s !important;
+}
+
 .blueback {
   background-color: var(--dark-blue-color) !important;
   transition: all 0.3s !important;
@@ -154,4 +189,47 @@ body {
 .greenback {
   background-color: var(--dark-green-color) !important;
   transition: all 0.3s !important;
+}
+
+.bluebackhover:hover {
+  background-color: var(--dark-blue-color) !important;
+  color: var(--black-color) !important;
+}
+
+.yellowbackhover:hover {
+  background-color: var(--dark-yellow-color) !important;
+  color: var(--black-color) !important;
+}
+
+.pinkbackhover:hover {
+  background-color: var(--dark-pink-color) !important;
+  color: var(--black-color) !important;
+}
+
+.greenbackhover:hover {
+  background-color: var(--dark-green-color) !important;
+  color: var(--black-color) !important;
+}
+
+.redbackhover:hover {
+  background-color: var(--dark-red-color) !important;
+  color: var(--black-color) !important;
+}
+
+.purplebackhover:hover {
+  background-color: var(--dark-purple-color) !important;
+  color: var(--black-color) !important;
+}
+
+.orangebackhover:hover {
+  background-color: var(--dark-orange-color) !important;
+  color: var(--black-color) !important;
+}
+
+.lighthover:hover {
+  background-color: var(--white2-color) !important;
+}
+
+.darkhover:hover {
+  background-color: var(--black3-color) !important;
 }

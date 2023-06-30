@@ -69,7 +69,10 @@ export default function Sidebar() {
             Users
           </span>
           {users.map((item, index) => (
-            <div key={index} className="sidebar--container--users--user">
+            <div
+              key={index}
+              className={`sidebar--container--users--user ${theme}hover`}
+            >
               <div className="sidebar--container--users--user--info">
                 <img
                   src={item.profile}
@@ -81,7 +84,7 @@ export default function Sidebar() {
                     color: changeMode?.gray,
                     transition: changeMode?.transitions,
                   }}
-                  className="sidebar--container--users--user--info--username"
+                  className={`sidebar--container--users--user--info--username ${color}`}
                 >
                   {item?.username}
                 </span>

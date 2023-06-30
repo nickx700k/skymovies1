@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { UtilityContext } from "../utilities/Provider";
 import notification from "../data/notification.json";
 import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export default function Topbar() {
   const {
@@ -68,10 +68,16 @@ export default function Topbar() {
     setActive((preve) => !preve);
   };
 
+  const location = useLocation().pathname;
+
   useEffect(() => {
-    if (search) {
-      navigate(`/search?=${search}`);
-    } else {
+    if (search && location.includes("/tvseries")) {
+      navigate(`/searchfortv`);
+    }
+    if (search && location === "/") {
+      navigate(`/searchformovie`);
+    }
+    if (!search) {
       navigate("/");
     }
   }, [search]);
@@ -257,16 +263,18 @@ export default function Topbar() {
             transition: changeMode?.transition,
           }}
         >
-          <div className="topbar--container--userprofile--up">
-            <h5 className="topbar--container--userprofile--up--h5">
+          <div className={`topbar--container--userprofile--up ${color}bg`}>
+            <h5 className={`topbar--container--userprofile--up--h5 ${color}`}>
               Admiral0796
             </h5>
           </div>
           <div className="topbar--container--userprofile--middle">
             <ul className="topbar--container--userprofile--middle--options">
-              <li className="topbar--container--userprofile--middle--options--item">
+              <li
+                className={`topbar--container--userprofile--middle--options--item ${color}bg`}
+              >
                 <span
-                  className="topbar--container--userprofile--middle--options--item--span"
+                  className={`topbar--container--userprofile--middle--options--item--span ${color}hover`}
                   style={{
                     color: changeMode?.color2,
                     transition: changeMode?.transition,
@@ -275,9 +283,11 @@ export default function Topbar() {
                   Edit Profile
                 </span>
               </li>
-              <li className="topbar--container--userprofile--middle--options--item">
+              <li
+                className={`topbar--container--userprofile--middle--options--item ${color}bg`}
+              >
                 <span
-                  className="topbar--container--userprofile--middle--options--item--span"
+                  className={`topbar--container--userprofile--middle--options--item--span ${color}hover`}
                   style={{
                     color: changeMode?.color2,
                     transition: changeMode?.transition,
@@ -286,9 +296,11 @@ export default function Topbar() {
                   Edit Settings
                 </span>
               </li>
-              <li className="topbar--container--userprofile--middle--options--item">
+              <li
+                className={`topbar--container--userprofile--middle--options--item ${color}bg`}
+              >
                 <span
-                  className="topbar--container--userprofile--middle--options--item--span"
+                  className={`topbar--container--userprofile--middle--options--item--span ${color}hover`}
                   style={{
                     color: changeMode?.color2,
                     transition: changeMode?.transition,
@@ -297,9 +309,11 @@ export default function Topbar() {
                   Dashboard
                 </span>
               </li>
-              <li className="topbar--container--userprofile--middle--options--item">
+              <li
+                className={`topbar--container--userprofile--middle--options--item ${color}bg`}
+              >
                 <span
-                  className="topbar--container--userprofile--middle--options--item--span"
+                  className={`topbar--container--userprofile--middle--options--item--span ${color}hover`}
                   style={{
                     color: changeMode?.color2,
                     transition: changeMode?.transition,
@@ -308,9 +322,11 @@ export default function Topbar() {
                   Wish List
                 </span>
               </li>
-              <li className="topbar--container--userprofile--middle--options--item">
+              <li
+                className={`topbar--container--userprofile--middle--options--item ${color}bg`}
+              >
                 <span
-                  className="topbar--container--userprofile--middle--options--item--span"
+                  className={`topbar--container--userprofile--middle--options--item--span ${color}hover`}
                   style={{
                     color: changeMode?.color2,
                     transition: changeMode?.transition,
